@@ -1,9 +1,13 @@
 def benchmark
-  # Your benchmarking code goes here.
+  start_time = Time.now
+
+  thing_to_calculate = yield
+  # puts yield;                 # for testing: will print the contents of the incoming block
+  end_time = Time.now
+  return time_elapsed = end_time - start_time
 end
  
-# Be careful, pasting this into IRB will take a long time to print.
-# It's a loooong string. :)
+# Be careful, printing this will take a veeeeeeeerry long time :)
 long_string = "apple"*100000000
  
 running_time = benchmark { long_string.reverse }
